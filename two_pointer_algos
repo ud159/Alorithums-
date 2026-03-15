@@ -1,0 +1,273 @@
+// sorted pair sum
+
+#include <bits/stdc++.h>
+using namespace std;
+
+pair<int,int> twoSumSorted(vector<int>& a, int target) {
+    int l = 0;
+    int r = a.size() - 1;
+
+    while(l < r) {
+        int sum = a[l] + a[r];
+
+        if(sum == target) return {l, r};
+        else if(sum < target) l++;
+        else r--;
+    }
+
+    return {-1,-1};
+}
+
+
+//remove duplicate in sorted array
+int removeDuplicates(vector<int>& a) {
+    if(a.empty()) return 0;
+
+    int j = 0;
+
+    for(int i = 1; i < a.size(); i++) {
+        if(a[i] != a[j]) {
+            j++;
+            a[j] = a[i];
+        }
+    }
+
+    return j + 1;
+}
+
+
+//two pointer merge array
+int i = 0, j = 0;
+
+while (i < n && j < m) {
+    
+    if (a[i] < b[j]) {
+        res.push_back(a[i]);
+        i++;
+    }
+    else {
+        res.push_back(b[j]);
+        j++;
+    }
+}
+
+//skip duplicate
+int i = 0;
+
+for (int j = 1; j < n; j++) {
+    if (a[i] != a[j]) {
+        i++;
+        a[i] = a[j];
+    }
+}
+
+//fixed slide sliding window
+int sum = 0;
+
+for (int i = 0; i < k; i++)
+    sum += a[i];
+
+for (int i = k; i < n; i++) {
+    sum += a[i];
+    sum -= a[i - k];
+
+    // process window
+}
+
+//varaiable size
+int l = 0;
+
+for (int r = 0; r < n; r++) {
+
+    // expand window
+
+    while (window_invalid) {
+        l++;
+    }
+
+    // process window
+}
+
+//with sum constraint
+int l = 0;
+long long sum = 0;
+
+for (int r = 0; r < n; r++) {
+
+    sum += a[r];
+
+    while (sum > k) {
+        sum -= a[l];
+        l++;
+    }
+
+    // valid window
+}
+
+//longest window templete
+int l = 0;
+int ans = 0;
+
+for (int r = 0; r < n; r++) {
+
+    while (window_invalid) {
+        l++;
+    }
+
+    ans = max(ans, r - l + 1);
+}
+
+//count subarray templete
+int l = 0;
+long long count = 0;
+
+for (int r = 0; r < n; r++) {
+
+    while (window_invalid) {
+        l++;
+    }
+
+    count += r - l + 1;
+}
+
+//sliding window with hash map
+unordered_map<int,int> mp;
+
+int l = 0;
+
+for (int r = 0; r < n; r++) {
+
+    mp[a[r]]++;
+
+    while (window_invalid) {
+        mp[a[l]]--;
+        l++;
+    }
+}
+
+//atmost k templete
+int l = 0;
+int distinct = 0;
+
+unordered_map<int,int> mp;
+
+for (int r = 0; r < n; r++) {
+
+    if (mp[a[r]] == 0)
+        distinct++;
+
+    mp[a[r]]++;
+
+    while (distinct > k) {
+        mp[a[l]]--;
+
+        if (mp[a[l]] == 0)
+            distinct--;
+
+        l++;
+    }
+
+    // process window
+}
+
+//subarray with k distinct elemets
+int atMostK(vector<int>& a, int k) {
+
+    unordered_map<int,int> mp;
+    int l = 0;
+    long long count = 0;
+
+    for (int r = 0; r < a.size(); r++) {
+
+        mp[a[r]]++;
+
+        while (mp.size() > k) {
+            mp[a[l]]--;
+            if (mp[a[l]] == 0)
+                mp.erase(a[l]);
+            l++;
+        }
+
+        count += r - l + 1;
+    }
+
+    return count;
+}
+
+//longest valid window
+int l = 0;
+int ans = 0;
+
+for (int r = 0; r < n; r++) {
+
+    // expand window
+
+    while (window_invalid) {
+        l++;
+    }
+
+    ans = max(ans, r - l + 1);
+}
+
+//sliding window with frequency map
+unordered_map<char,int> freq;
+
+int l = 0;
+
+for (int r = 0; r < s.size(); r++) {
+
+    freq[s[r]]++;
+
+    while (window_invalid) {
+
+        freq[s[l]]--;
+
+        if (freq[s[l]] == 0)
+            freq.erase(s[l]);
+
+        l++;
+    }
+}
+
+//fixed window trick
+int sum = 0;
+
+for (int i = 0; i < k; i++)
+    sum += a[i];
+
+for (int r = k; r < n; r++) {
+
+    sum += a[r];
+    sum -= a[r - k];
+
+    
+}
+
+///count valid subarray
+long long count = 0;
+int l = 0;
+
+for (int r = 0; r < n; r++) {
+
+    while (window_invalid) {
+        l++;
+    }
+
+    count += r - l + 1;
+}
+
+
+//longest valid window
+int l = 0;
+int ans = 0;
+
+for (int r = 0; r < n; r++) {
+
+    // expand window
+
+    while (window_invalid) {
+        l++;
+    }
+
+    ans = max(ans, r - l + 1);
+}
