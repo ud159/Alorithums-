@@ -44,6 +44,7 @@ int main()
         cout << "Cycle detected";
     else
         cout << "No cycle";
+    cout << endl;
 
     return 0;
 }
